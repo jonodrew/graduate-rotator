@@ -5,7 +5,7 @@ click==7.1.2
 distlib==0.3.1
 filelock==3.0.12
 Flask==1.1.2
-identify==1.4.20
+identify==1.4.21
 itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
