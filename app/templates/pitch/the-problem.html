@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="govuk-heading-l">
+        The problem (with tables)
+    </h2>
+    <p class="govuk-body-l">
+        With only 100 people on your programme and 100 roles to move them into, you're
+        facing a problem that has 9.3 x 10<sup>157</sup> possible solutions. For
+        comparison, that's more than the number of particles in the known universe.
+    </p>
+    <p class="govuk-body">
+        The approach we're taking here is calculating every possible combination, so
+        that we can see every way we could put these brilliant people and brilliant
+        roles together. That means generating a score that represents how well suited
+        a candidate/role pair is. These scores are weighted according to what's
+        important to your business. Let's assume that we're looking for generalists, and
+        potential matches are scored according to what new skills candidates will learn.
+    </p>
+    <p class="govuk-body">
+        This issue comes about because this problem grows exponentially with every extra
+        new candidate/role pair. Here's a table with one candidate and one role.
+    </p>
+    <table class="govuk-table">
+        <caption class="govuk-table__caption">One candidate and one role</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Candidate 1</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Role A</th>
+        <td class="govuk-table__cell">20</td>
+        </tr>
+  </tbody>
+</table>
+    <p class="govuk-body">
+        As you can see, there's only one option: Candidate 1 will take Role A. And with
+        two candidates and two roles, there's only two possibilities:
+    </p>
+    <table class="govuk-table">
+        <caption class="govuk-table__caption">Two candidates and two roles</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Candidate 1</th>
+            <th scope="col" class="govuk-table__header">Candidate 2</th>
+
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Role A</th>
+        <td class="govuk-table__cell">20</td>
+        <td class="govuk-table__cell">19</td>
+
+        </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Role B</th>
+        <td class="govuk-table__cell">19</td>
+        <td class="govuk-table__cell">21</td>
+
+        </tr>
+  </tbody>
+</table>
+
+    <p class="govuk-body">
+        Candidate 1 will take Role A, because it's a better fit, and Candidate 2 will
+        only have one choice - whichever is left. Luckily, that's the best role for
+        them too. At three, there are six possibilities:
+    </p>
+        <table class="govuk-table">
+        <caption class="govuk-table__caption">Three candidates and three roles</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Candidate 1</th>
+            <th scope="col" class="govuk-table__header">Candidate 2</th>
+            <th scope="col" class="govuk-table__header">Candidate 3</th>
+
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Role A</th>
+        <td class="govuk-table__cell">18</td>
+        <td class="govuk-table__cell">20</td>
+        <td class="govuk-table__cell">21</td>
+
+        </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Role B</th>
+        <td class="govuk-table__cell">21</td>
+        <td class="govuk-table__cell">21</td>
+        <td class="govuk-table__cell">18</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Role C</th>
+        <td class="govuk-table__cell">18</td>
+        <td class="govuk-table__cell">19</td>
+        <td class="govuk-table__cell">18</td>
+        </tr>
+  </tbody>
+</table>
+<p class="govuk-body">
+    The first candidate can choose (or be assigned) to any one of three roles. The
+    second candidate can have a choice of two, and the last candidate gets whatever is
+    left. There are six possibilities now: 3 x 2 x 1. This is usually written <i>3!</i>,
+or three factorial.
+</p>
+    <p class="govuk-body">
+    With ten candidates, there are ten factorial (10!) ways of combining them. 10! is
+        3,628,800 different possibilities. Every new pair increases the number of
+        combinations exponentially, which is why by the time we get to 100 candidate/role
+        pairs the number is so incredibly massive. That number, written out, looks like this:
+    </p>
+
+    <p class="govuk-body" style="word-wrap:break-word !important;">
+    93000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    </p>
+
+    <p>
+        These huge numbers might not convince you of the difficulty of the task. I
+        expect you have a system already, and it works - it may take staff a few days,
+        and there may be the occasional complaint, but overall it works. On the next page
+        I'm going to generate a random 10 x 10 grid of numbers, representing the
+        pairings of just 10 candidates and 10 roles. I am confident that we'll agree on
+        the solution, but I hope you'll recognise how much quicker this system provides it.
+    </p>
+
+
+
+       <a href="{{ url_for("pitch.problem") }}" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Tell me
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
+{% endblock %}
