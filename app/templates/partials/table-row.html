@@ -1,0 +1,6 @@
+<tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Role {{ j }}</th>
+    {% for value in row %}
+        {% include "partials/table-cell.html" %}
+    {% endfor %}
+</tr>
