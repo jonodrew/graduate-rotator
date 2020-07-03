@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="govuk-heading-l">
+    Testing the theory
+</h2>
+
+    <table class="govuk-table">
+        <caption class="govuk-table__caption">Random pairings</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">A</th>
+            <th scope="col" class="govuk-table__header">B</th>
+            <th scope="col" class="govuk-table__header">C</th>
+            <th scope="col" class="govuk-table__header">D</th>
+            <th scope="col" class="govuk-table__header">E</th>
+            <th scope="col" class="govuk-table__header">F</th>
+            <th scope="col" class="govuk-table__header">G</th>
+            <th scope="col" class="govuk-table__header">H</th>
+            <th scope="col" class="govuk-table__header">I</th>
+            <th scope="col" class="govuk-table__header">J</th>
+
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        {% for row in data %}
+            {% set j = loop.index %}
+            {% include "partials/table-row.html" %}
+        {% endfor %}
+
+  </tbody>
+</table>
+
+    <form class="govuk-form-group" action="{{ url_for("pitch.solution") }}" method="post">
+        <div class="input submit">
+            <input type="submit" value="Solve" class="govuk-button">
+        </div>
+    </form>
+{% endblock %}
