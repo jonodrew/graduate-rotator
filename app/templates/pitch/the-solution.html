@@ -1,9 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <table class="govuk-table">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption">Suggested pairings</caption>
+            <thead class="govuk-table__header">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"></th>
+                    <th scope="col" class="govuk-table__header">Role</th>
+                    <th scope="col" class="govuk-table__header">Candidate</th>
+                    <th scope="col" class="govuk-table__header">Score</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                {% for answer in indexes %}
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header"></th>
+                        <td class="govuk-table__cell">Role {{ answer[0] + 1 }}</td>
+                        <td class="govuk-table__cell">{{ lookup.get(answer[1]) }}</td>
+                        <td class="govuk-table__cell">{{ data[answer[0]][answer[1]] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
         <caption class="govuk-table__caption">Random pairings</caption>
-        <thead class="govuk-table__head">
+        <thead class="govuk-table__header">
         <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header"></th>
             <th scope="col" class="govuk-table__header">A</th>
@@ -24,15 +51,11 @@
             {% set j = loop.index %}
             {% include "partials/table-row.html" %}
         {% endfor %}
+        </tbody>
+    </table>
+      </div>
+    </div>
 
-  </tbody>
-</table>
-<h3 class="govuk-heading-m">
-    My best results:
-</h3>
-    {% for answer in indexes %}
-        <p class="govuk-body">Role {{ answer[0] + 1 }} should be allocated to Candidate {{ lookup.get(answer[1]) }} </p>
-    {% endfor %}
 
     <a href="{{ url_for("pitch.approach") }}" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
   Try again
