@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">How does this work at the moment?</h1>
+    <p class="govuk-body-lead">
+        In most large organisations, this process is carried out manually. Staff shuffle big
+        piles of paper and try to remember what they've seen and if it would be suitable. It's
+        a lot of effort, and never - despite best efforts - seems to work out particularly well.
+        There's a really good reason for this: it's almost impossible to do manually.
+    </p>
+    <p class="govuk-body">
+        Often, role templates are written like job adverts. Matchers have to parse
+        complex technical language to understand what's being offered. Then they try to
+        decide which of the candidates they've seen would be well suited. This approach
+        can be open to bias, as certain candidates might stick in the mind more than others.
+        It also lacks transparency and objectivity. A different matcher might make a different
+        decision, and it's often done on instinct or gut feeling rather than anything quantifiable.
+    </p>
+    <p class="govuk-body">
+        In addition, because these templates are put together in word-processing software,
+    they're not optimised to be viewed on the internet. The data within them is also
+    locked away. As a senior leader, it's vital that you know what people on your
+        development schemes are being asked to do. These requests often indicate critical
+        gaps in your organisation's capability - but even the most committed senior leader
+    might hesitate at reviewing three or four hundred pages of prose.
+    </p>
+    <p class="govuk-body">
+        The approach I've taken with this software is that the role profile is for the
+    candidate to read: it should give them a strong flavour of what they'll be doing.
+    However, the information that's important to the matcher is whether it will stretch
+    the individual. I've quantified this with scales of 0-5.
+    </p>
+    <p class="govuk-body">
+        I've also chosen an algorithm that optimises for the best overall outcome. In the
+    next few pages I'll take you through a worked example, as well as explaining why I think
+    this problem is much harder than it first appears.
+    </p>
+
+    <a href="{{ url_for("pitch.problem") }}" class="govuk-button">Continue</a>
+{% endblock %}

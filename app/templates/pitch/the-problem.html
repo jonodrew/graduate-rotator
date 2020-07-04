@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2 class="govuk-heading-l">
-        The problem (with tables)
-    </h2>
+    <h1 class="govuk-heading-l">
+        A worked example
+    </h1>
     <p class="govuk-body-l">
-        With only 100 people on your programme and 100 roles to move them into, you're
-        facing a problem that has 9.3 x 10<sup>157</sup> possible solutions. For
-        comparison, that's more than the number of particles in the known universe.
+        This is a very rough example. I've used a limited number of criteria for the sake
+    of brevity. The system at scale could operate with as many data points as are required.
     </p>
     <p class="govuk-body">
         Let's suppose your organisation has four key competences: Digital,
         Finance, Operations, and Policy. Let's suppose also that it's the first year of
     your development scheme: you've hand-picked Aisha, who's a rising star in Digital.
-        She scores <code>her</code> knowledge in each key competency as follows:</p>
+        She scores her knowledge in each key competency as follows:</p>
     <p class="govuk-body">
     <code>
         Aisha
@@ -43,8 +42,11 @@
     </p>
     <p class="govuk-body">
         We could now work out a number that represents how well this candidate and role
-    are suited to each other. Assuming we value generalism, I'll use a calculation that
-    gives more weight to skills Aisha doesn't have:
+    are suited to each other. For the sake of this example, I'm going to assume that
+        we want Aisha to do something she's not good at - Policy, Operations, or Finance.
+        To do that, I'll use a calculation that gives more weight to skills she doesn't have
+    by subtracting her current level of skill from the maximum. If we wanted to focus on
+        specialising, we'd use a different calculation.
     </p>
     <p class="govuk-body">
         <code>
@@ -55,6 +57,8 @@
             Policy: (5-2) x 1 = 3 <br>
             Operations: (5-1) x 0 = 0 <br>
             Finance: (5-0) x 5 = 25 <br>
+            <br>
+            Total: 29
         </code>
     </p>
     <p class="govuk-body">
@@ -73,7 +77,7 @@
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Assistant Head of Finance</th>
-        <td class="govuk-table__cell">25</td>
+        <td class="govuk-table__cell">29</td>
         </tr>
   </tbody>
 </table>
@@ -94,14 +98,14 @@
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Assistant Head of Finance</th>
-        <td class="govuk-table__cell">25</td>
+        <td class="govuk-table__cell">29</td>
         <td class="govuk-table__cell">19</td>
 
         </tr>
         <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Delivery Manager</th>
         <td class="govuk-table__cell">20</td>
-        <td class="govuk-table__cell">25</td>
+        <td class="govuk-table__cell">29</td>
 
         </tr>
   </tbody>
@@ -126,7 +130,7 @@
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Assistant Head of Finance</th>
-        <td class="govuk-table__cell">25</td>
+        <td class="govuk-table__cell">29</td>
         <td class="govuk-table__cell">20</td>
         <td class="govuk-table__cell">21</td>
 
@@ -134,14 +138,14 @@
         <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Delivery Manager</th>
         <td class="govuk-table__cell">21</td>
-        <td class="govuk-table__cell">25</td>
+        <td class="govuk-table__cell">29</td>
         <td class="govuk-table__cell">18</td>
         </tr>
 
         <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Policy Lead</th>
         <td class="govuk-table__cell">18</td>
-        <td class="govuk-table__cell">25</td>
+        <td class="govuk-table__cell">29</td>
         <td class="govuk-table__cell">18</td>
         </tr>
   </tbody>
@@ -153,31 +157,20 @@
 or three factorial.
 </p>
     <p class="govuk-body">
-        With ten candidates, there are ten factorial (<var>10!</var>) ways of combining them. 10! is
+        With ten candidates, there are ten factorial (<var>10!</var>) ways of combining them. <var>10!</var> is
         3,628,800 different possibilities. Every new pair increases the number of
-        combinations exponentially, which is why by the time we get to 100 candidate/role
-        pairs the number is so incredibly massive. That number, written out, looks like this:
+        combinations exponentially.
     </p>
-
-    <p class="govuk-body" style="word-wrap:break-word !important;">
-    93000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-    </p>
-
     <p class="govuk-body">
-        These huge numbers might not convince you of the difficulty of the task. I
-        expect you have a system already, and it works - it may take staff a few days,
-        and there may be the occasional complaint, but overall it works. On the next page
-        I'm going to generate a random 10 x 10 grid of numbers, representing the
-        pairings of just 10 candidates and 10 roles. I am confident that we'll agree on
-        the solution, but I hope you'll recognise how much quicker this system provides it.
+        Having worked out an objective value for how stretching each role would be for each
+    candidate, we can try our best to calculate the best pairing overall. Although we're
+    doing this with numbers, this is exactly the same thing your staff are doing manually -
+    trying to find great matches that will grow and develop your staff. On the next page,
+    you'll see a table with only ten candidate and ten roles. I'd like you to try to find
+    an answer. You can then compare with the computer-assisted answer.
     </p>
 
 
 
-       <a href="{{ url_for("pitch.approach") }}" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-  Tell me
-  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-  </svg>
-</a>
+       <a href="{{ url_for("pitch.approach") }}" role="button" class="govuk-button govuk-button--start" data-module="govuk-button">Continue</a>
 {% endblock %}
