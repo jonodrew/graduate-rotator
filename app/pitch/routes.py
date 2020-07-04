@@ -10,6 +10,11 @@ def start():
     return render_template("pitch/start.html")
 
 
+@pitch_bp.route("/situation", methods=["GET"])
+def situation():
+    return render_template("pitch/current-situation.html")
+
+
 @pitch_bp.route("/the-problem", methods=["GET"])
 def problem():
     return render_template("pitch/the-problem.html")
