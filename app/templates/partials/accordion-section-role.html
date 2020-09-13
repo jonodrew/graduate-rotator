@@ -1,0 +1,14 @@
+<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-{{ loop.index + 1 }}">
+          {{ role.title }} ({{ role.anchor }})
+        </span>
+        </h2>
+    </div>
+    <div id="accordion-default-content-{{ loop.index + 1 }}" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-{{ loop.index + 1 }}">
+        <ul class="govuk-list govuk-list--bullet">
+            <li>{{ candidate.first_name }} was given a marking of "{{ role.evaluation }}"</li>
+        </ul>
+    </div>
+</div>

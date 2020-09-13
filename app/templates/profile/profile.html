@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Career profile for {{ candidate.first_name }} {{ candidate.last_name }}
+        </span>
+                </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                <p class='govuk-body'>{{ candidate.first_name }} is on the {{ candidate.specialism }} Fast Stream</p>
+            </div>
+        </div>
+
+                {% for role in history %}
+                    {% set loop_ = loop %}
+                    {% include 'partials/accordion-section-role.html' %}
+                {% endfor %}
+
+
+    </div>
+
+    {#          <ul class="govuk-list govuk-list--bullet">#}
+    {#              <li>{{ candidate.first_name }} is on the FLS scheme</li>#}
+    {#                {% if candidate.ethnicity.bame %}#}
+    {#                    <li>They are eligible for META {% if application.meta %} and have taken up#}
+    {#                    {% else %} but have not taken up{% endif %} the offer</li>#}
+    {#                {% endif %}#}
+    {#                {% if candidate.long_term_health_condition %}#}
+    {#                    <li>They are eligible for DELTA {% if application.delta %} and have taken up#}
+    {#                    {% else %} but have not taken up{% endif %} the offer</li>#}
+    {#                {% endif %}#}
+    {#            <li>They're in cohort {{ application.cohort }} on the#}
+    {#                {{ application.scheme_start_date.year }} intake</li>#}
+    {#              <li>This candidate is currently based in {{ candidate.current_location() }}</li>#}
+    {#              {% if candidate.completed_fast_stream %}#}
+    {#                  <li>They completed the Fast Stream</li>#}
+    {#              {% endif %}#}
+    {#              <li>They aspire to {{ application.aspirational_grade.value }}</li>#}
+    {#          </ul>#}
+    {#        </div>#}
+
+
+{% endblock %}
