@@ -51,11 +51,16 @@
         <button type="button" role="button" class="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
             <nav>
           <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
-            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+            <li class="govuk-header__navigation-item">
               <a class="govuk-header__link" href="{{ url_for("pitch.problem") }}">
                 The problem
               </a>
             </li>
+              <li class="govuk-header__navigation-item">
+                  <a class="govuk-header__link" href="{{ url_for("main.weighting") }}">
+                      Weighting
+                  </a>
+              </li>
           </ul>
         </nav>
 
