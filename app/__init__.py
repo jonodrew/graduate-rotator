@@ -15,4 +15,8 @@ def create_app(configuration=Config):
 
     app.register_blueprint(pitch_bp, url_prefix="/pitch/")
 
+    from app.main import main_bp
+
+    app.register_blueprint(main_bp)
+
     return app
