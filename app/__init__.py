@@ -19,4 +19,8 @@ def create_app(configuration=Config):
 
     app.register_blueprint(main_bp)
 
+    from app.profile import profile_bp
+
+    app.register_blueprint(profile_bp, url_prefix="/profile/")
+
     return app
