@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>93a95ec6-5d61-4a5d-801e-a26f11356773.SCHEMA:main</OriginalElement>
+  <nodes>
+    <node x="325.0" y="191.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.role</node>
+    <node x="180.25" y="609.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.assessment</node>
+    <node x="527.0" y="167.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.skill</node>
+    <node x="436.5" y="0.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.profession</node>
+    <node x="316.25" y="788.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.skill_level</node>
+    <node x="180.25" y="382.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.posting</node>
+    <node x="0.0" y="155.0">93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.candidate</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.posting" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.role">
+      <point x="52.0" y="-88.5" />
+      <point x="336.25" y="357.0" />
+      <point x="416.0" y="357.0" />
+      <point x="0.0" y="52.5" />
+    </edge>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.posting" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.candidate">
+      <point x="-52.0" y="-88.5" />
+      <point x="232.25" y="357.0" />
+      <point x="152.5" y="357.0" />
+      <point x="0.0" y="88.5" />
+    </edge>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.role" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.profession">
+      <point x="0.0" y="-52.5" />
+      <point x="416.0" y="130.0" />
+      <point x="476.75" y="130.0" />
+      <point x="-40.25" y="52.5" />
+    </edge>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.skill_level" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.skill">
+      <point x="47.5" y="-64.5" />
+      <point x="458.75" y="763.0" />
+      <point x="618.0" y="763.0" />
+      <point x="0.0" y="76.5" />
+    </edge>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.skill" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.profession">
+      <point x="0.0" y="-76.5" />
+      <point x="618.0" y="130.0" />
+      <point x="557.25" y="130.0" />
+      <point x="40.25" y="52.5" />
+    </edge>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.assessment" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.posting">
+      <point x="0.0" y="-64.5" />
+      <point x="0.0" y="88.5" />
+    </edge>
+    <edge source="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.skill_level" target="93a95ec6-5d61-4a5d-801e-a26f11356773.TABLE:main.assessment">
+      <point x="-47.5" y="-64.5" />
+      <point x="363.75" y="763.0" />
+      <point x="284.25" y="763.0" />
+      <point x="0.0" y="64.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5756345177664974" x="570.0" y="482.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
