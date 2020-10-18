@@ -5,7 +5,11 @@ from config import Config
 def create_app(configuration=Config):
     app = Flask(__name__, static_folder="static")
 
+    from app.models import db, migrate
+
     app.config.from_object(configuration)
+    db.init_app(app)
+    migrate.init_app(app, db)
 
     from app.munkres_api import munkres_bp
 
