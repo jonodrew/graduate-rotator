@@ -16,7 +16,7 @@ MarkupSafe==1.1.1
 more-itertools==8.6.0
 munkres==1.1.4
 nodeenv==1.5.0
-packaging==20.8
+packaging==21.0
 pluggy==0.13.1
 pre-commit==2.9.3
 py==1.10.0
@@ -26,7 +26,7 @@ PyYAML==5.3.1
 requests==2.25.1
 six==1.15.0
 toml==0.10.1
-urllib3==1.26.2
+urllib3==1.26.4
 virtualenv==20.4.0
 wcwidth==0.2.5
 Werkzeug==1.0.1
