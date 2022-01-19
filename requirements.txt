@@ -10,7 +10,7 @@ Flask==1.1.2
 gunicorn==20.0.4
 identify==1.5.13
 idna==2.10
-itsdangerous==1.1.0
+itsdangerous==2.0.1
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 more-itertools==8.6.0
@@ -18,7 +18,7 @@ munkres==1.1.4
 nodeenv==1.5.0
 packaging==21.0
 pluggy==1.0.0
-pre-commit==2.9.3
+pre-commit==2.17.0
 py==1.10.0
 pyparsing==2.4.7
 pytest==6.2.5
