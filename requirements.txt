@@ -11,7 +11,7 @@ gunicorn==20.1.0
 identify==2.4.4
 idna==3.3
 itsdangerous==2.0.1
-Jinja2==2.11.3
+Jinja2==3.0.3
 MarkupSafe>=2.0.0
 more-itertools==8.12.0
 munkres==1.1.4
